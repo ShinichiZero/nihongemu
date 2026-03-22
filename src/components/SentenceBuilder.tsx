@@ -28,6 +28,27 @@ export function SentenceBuilder({ exercise, onComplete }: SentenceBuilderProps) 
   const usedTileIds = new Set(Object.values(slotFillings));
   const availableTiles = exercise.tiles.filter((t) => !usedTileIds.has(t.id));
 
+  // Detect touch devices and enable tap-to-select behavior there.
+  const isTouchDevice = typeof navigator !== 'undefined' && (
+    (navigator as any).maxTouchPoints > 0 || 'ontouchstart' in window
+  );
+  const tapToSelect = isTouchDevice;
+
+  const handleTileTap = useCallback((tile: TileData) => {
+    // Place tapped tile into first empty slot (mobile-friendly)
+    setSlotFillings((prev) => {
+      const empty = exercise.slots.find((s) => !prev[s.id]);
+      if (!empty) return prev;
+      const updated = { ...prev };
+      // ensure tile isn't placed elsewhere
+      for (const [sid, tid] of Object.entries(updated)) {
+        if (tid === tile.id) delete updated[sid];
+      }
+      updated[empty.id] = tile.id;
+      return updated;
+    });
+  }, [exercise.slots]);
+
   const handleDragStart = useCallback((event: DragStartEvent) => {
     const tileId = event.active.id as string;
     const tile = tileMap.get(tileId);
@@ -135,7 +156,12 @@ export function SentenceBuilder({ exercise, onComplete }: SentenceBuilderProps) 
 
         <div className="flex flex-wrap gap-2 justify-center p-4 bg-gray-700/30 rounded-2xl min-h-[4rem] items-center">
           {availableTiles.map((tile) => (
-            <WordTile key={tile.id} tile={tile} />
+            <WordTile
+              key={tile.id}
+              tile={tile}
+              onTap={tapToSelect ? () => handleTileTap(tile) : undefined}
+              draggable={!tapToSelect}
+            />
           ))}
           {availableTiles.length === 0 && (
             <p className="text-gray-500 text-sm">All tiles placed!</p>

@@ -7,6 +7,8 @@ import { TileData } from '../types';
 interface WordTileProps {
   tile: TileData;
   isDragging?: boolean;
+  onTap?: () => void;
+  draggable?: boolean;
 }
 
 const tileColors: Record<string, string> = {
@@ -17,7 +19,7 @@ const tileColors: Record<string, string> = {
   grammar: 'bg-purple-600 border-purple-400 text-white shadow-purple-500/50',
 };
 
-export function WordTile({ tile, isDragging: externalIsDragging }: WordTileProps) {
+export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggable = true }: WordTileProps) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: tile.id,
     data: { tile },
@@ -34,13 +36,14 @@ export function WordTile({ tile, isDragging: externalIsDragging }: WordTileProps
     <motion.div
       ref={setNodeRef}
       style={style}
-      {...listeners}
-      {...attributes}
+      {...(draggable ? listeners : {})}
+      {...(draggable ? attributes : {})}
+      onClick={!draggable && onTap ? onTap : undefined}
       animate={{ scale: isBeingDragged ? 1.1 : 1 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
       className={`
         inline-flex items-center justify-center
-        px-3 py-2 rounded-xl border-2 cursor-grab
+        px-3 py-2 rounded-xl border-2 ${draggable ? 'cursor-grab' : (onTap ? 'cursor-pointer' : '')}
         font-medium text-sm select-none
         shadow-lg ${colorClass}
         ${isBeingDragged ? 'opacity-50 z-50' : 'opacity-100'}
