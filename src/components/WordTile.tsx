@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import { motion } from 'framer-motion';
@@ -33,28 +33,33 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
   const isBeingDragged = isDragging || externalIsDragging;
 
   // pointer-based tap detection to avoid triggering during drag
-  let pointerDownX: number | null = null;
-  let pointerDownY: number | null = null;
-  let pointerDownTime: number | null = null;
+  const pointerDownX = useRef<number | null>(null);
+  const pointerDownY = useRef<number | null>(null);
+  const pointerDownTime = useRef<number | null>(null);
 
   const onPointerDown = (e: React.PointerEvent) => {
-    pointerDownX = e.clientX;
-    pointerDownY = e.clientY;
-    pointerDownTime = Date.now();
+    pointerDownX.current = e.clientX;
+    pointerDownY.current = e.clientY;
+    pointerDownTime.current = Date.now();
   };
 
   const onPointerUp = (e: React.PointerEvent) => {
     if (!onTap) return;
-    if (pointerDownX == null || pointerDownY == null || pointerDownTime == null) return;
-    const dx = Math.abs(e.clientX - pointerDownX);
-    const dy = Math.abs(e.clientY - pointerDownY);
-    const dt = Date.now() - pointerDownTime;
+    if (pointerDownX.current == null || pointerDownY.current == null || pointerDownTime.current == null) return;
+    const dx = Math.abs(e.clientX - pointerDownX.current);
+    const dy = Math.abs(e.clientY - pointerDownY.current);
+    const dt = Date.now() - pointerDownTime.current;
     const distance = Math.sqrt(dx * dx + dy * dy);
     // treat as tap if short and little movement
     if (distance < 8 && dt < 300 && !isBeingDragged) {
       onTap();
     }
-    pointerDownX = pointerDownY = pointerDownTime = null;
+    pointerDownX.current = pointerDownY.current = pointerDownTime.current = null;
+  };
+
+  const onClickFallback = () => {
+    if (!onTap) return;
+    if (!isBeingDragged) onTap();
   };
 
   return (
@@ -65,6 +70,7 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
       {...(draggable ? attributes : {})}
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
+      onClick={onClickFallback}
       role={onTap ? 'button' : undefined}
       tabIndex={0}
       aria-label={tile.text}
