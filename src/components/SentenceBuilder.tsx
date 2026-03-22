@@ -140,6 +140,13 @@ export function SentenceBuilder({ exercise, onComplete }: SentenceBuilderProps) 
               occupiedTile={slotFillings[slot.id] ? tileMap.get(slotFillings[slot.id]) : undefined}
               isCorrect={submitted && isCorrect}
               isError={submitted && !isCorrect}
+              onRemove={(slotId) => {
+                setSlotFillings((prev) => {
+                  const updated = { ...prev };
+                  delete updated[slotId];
+                  return updated;
+                });
+              }}
             />
           ))}
         </div>
@@ -159,7 +166,7 @@ export function SentenceBuilder({ exercise, onComplete }: SentenceBuilderProps) 
             <WordTile
               key={tile.id}
               tile={tile}
-              onTap={tapToSelect ? () => handleTileTap(tile) : undefined}
+              onTap={() => handleTileTap(tile)}
               draggable={!tapToSelect}
             />
           ))}

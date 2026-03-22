@@ -32,23 +32,52 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
   const colorClass = tileColors[tile.type] ?? 'bg-gray-600 border-gray-400 text-white';
   const isBeingDragged = isDragging || externalIsDragging;
 
+  // pointer-based tap detection to avoid triggering during drag
+  let pointerDownX: number | null = null;
+  let pointerDownY: number | null = null;
+  let pointerDownTime: number | null = null;
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    pointerDownX = e.clientX;
+    pointerDownY = e.clientY;
+    pointerDownTime = Date.now();
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (!onTap) return;
+    if (pointerDownX == null || pointerDownY == null || pointerDownTime == null) return;
+    const dx = Math.abs(e.clientX - pointerDownX);
+    const dy = Math.abs(e.clientY - pointerDownY);
+    const dt = Date.now() - pointerDownTime;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    // treat as tap if short and little movement
+    if (distance < 8 && dt < 300 && !isBeingDragged) {
+      onTap();
+    }
+    pointerDownX = pointerDownY = pointerDownTime = null;
+  };
+
   return (
     <motion.div
       ref={setNodeRef}
-      style={style}
+      style={{ ...style, touchAction: 'manipulation' }}
       {...(draggable ? listeners : {})}
       {...(draggable ? attributes : {})}
-      onClick={!draggable && onTap ? onTap : undefined}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      role={onTap ? 'button' : undefined}
+      tabIndex={0}
+      aria-label={tile.text}
       animate={{ scale: isBeingDragged ? 1.1 : 1 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
       className={`
         inline-flex items-center justify-center
-        px-3 py-2 rounded-xl border-2 ${draggable ? 'cursor-grab' : (onTap ? 'cursor-pointer' : '')}
-        font-medium text-sm select-none
+        px-4 py-3 rounded-xl border-2 ${draggable ? 'cursor-grab' : 'cursor-pointer'}
+        font-medium text-sm select-none touch-manipulation
         shadow-lg ${colorClass}
         ${isBeingDragged ? 'opacity-50 z-50' : 'opacity-100'}
         hover:scale-105 transition-transform
-        min-w-[3rem]
+        min-w-[4rem]
       `}
     >
       {tile.text}

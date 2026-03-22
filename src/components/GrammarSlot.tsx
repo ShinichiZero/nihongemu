@@ -7,9 +7,10 @@ interface GrammarSlotProps {
   occupiedTile?: TileData;
   isCorrect?: boolean;
   isError?: boolean;
+  onRemove?: (slotId: string) => void;
 }
 
-export function GrammarSlot({ slot, occupiedTile, isCorrect, isError }: GrammarSlotProps) {
+export function GrammarSlot({ slot, occupiedTile, isCorrect, isError, onRemove }: GrammarSlotProps) {
   const { setNodeRef, isOver } = useDroppable({ id: slot.id });
 
   const borderClass = isCorrect
@@ -40,7 +41,11 @@ export function GrammarSlot({ slot, occupiedTile, isCorrect, isError }: GrammarS
             animate={{ scale: [1.2, 1], opacity: 1 }}
             exit={{ scale: 0.5, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-            className="text-sm font-medium text-white"
+            className="text-sm font-medium text-white cursor-pointer"
+            role={onRemove ? 'button' : undefined}
+            tabIndex={onRemove ? 0 : undefined}
+            onClick={onRemove ? () => onRemove(slot.id) : undefined}
+            onKeyDown={onRemove ? (e) => { if (e.key === 'Enter' || e.key === ' ') onRemove(slot.id); } : undefined}
           >
             {occupiedTile.text}
             {isCorrect && (
