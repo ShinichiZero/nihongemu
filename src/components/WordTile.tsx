@@ -57,6 +57,23 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
     pointerDownX.current = pointerDownY.current = pointerDownTime.current = null;
   };
 
+  // Capture-phase handler: run before other pointer handlers (helps when dnd-kit
+  // attaches listeners that can swallow clicks). It will trigger the tap
+  // behavior early for small movements.
+  const onPointerUpCapture = (e: React.PointerEvent) => {
+    if (!onTap) return;
+    if (pointerDownX.current == null || pointerDownY.current == null || pointerDownTime.current == null) return;
+    const dx = Math.abs(e.clientX - pointerDownX.current);
+    const dy = Math.abs(e.clientY - pointerDownY.current);
+    const dt = Date.now() - pointerDownTime.current;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    if (distance < 8 && dt < 300 && !isBeingDragged) {
+      // clear refs to avoid double-calling in bubble-phase
+      pointerDownX.current = pointerDownY.current = pointerDownTime.current = null;
+      onTap();
+    }
+  };
+
   const onClickFallback = () => {
     if (!onTap) return;
     if (!isBeingDragged) onTap();
@@ -70,6 +87,7 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
       {...(draggable ? attributes : {})}
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
+      onPointerUpCapture={onPointerUpCapture}
       onClick={onClickFallback}
       role={onTap ? 'button' : undefined}
       tabIndex={0}
