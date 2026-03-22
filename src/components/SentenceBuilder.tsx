@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { DndContext, DragEndEvent, DragStartEvent, DragOverlay } from '@dnd-kit/core';
 import { motion } from 'framer-motion';
 import { ExerciseData, TileData } from '../types';
@@ -48,6 +48,52 @@ export function SentenceBuilder({ exercise, onComplete }: SentenceBuilderProps) 
       return updated;
     });
   }, [exercise.slots]);
+
+  // Global capture-phase pointer handlers to detect taps before dnd-kit
+  // handlers (improves Edge/Chrome reliability). This watches for
+  // pointerdown/up on elements with `data-tile-id` and triggers tap when
+  // movement/time thresholds are met.
+  useEffect(() => {
+    const starts = new Map<number, { tileId: string; x: number; y: number; t: number }>();
+
+    const onPointerDownCapture = (e: PointerEvent) => {
+      const path = (e.composedPath && e.composedPath()) || (e as any).path || [e.target];
+      for (const el of path as any[]) {
+        if (!el || !el.getAttribute) continue;
+        const tid = el.getAttribute('data-tile-id');
+        if (tid) {
+          starts.set(e.pointerId, { tileId: tid, x: e.clientX, y: e.clientY, t: Date.now() });
+          break;
+        }
+      }
+    };
+
+    const onPointerUpCapture = (e: PointerEvent) => {
+      const rec = starts.get(e.pointerId);
+      if (!rec) return;
+      const dx = Math.abs(e.clientX - rec.x);
+      const dy = Math.abs(e.clientY - rec.y);
+      const dt = Date.now() - rec.t;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      starts.delete(e.pointerId);
+      if (dist < 8 && dt < 300) {
+        const tile = tileMap.get(rec.tileId);
+        if (tile) {
+          // call our tap handler
+          handleTileTap(tile);
+          // stop other handlers from acting on this tap
+          try { e.stopImmediatePropagation(); } catch {}
+        }
+      }
+    };
+
+    window.addEventListener('pointerdown', onPointerDownCapture, true);
+    window.addEventListener('pointerup', onPointerUpCapture, true);
+    return () => {
+      window.removeEventListener('pointerdown', onPointerDownCapture, true);
+      window.removeEventListener('pointerup', onPointerUpCapture, true);
+    };
+  }, [handleTileTap, tileMap]);
 
   const handleDragStart = useCallback((event: DragStartEvent) => {
     const tileId = event.active.id as string;

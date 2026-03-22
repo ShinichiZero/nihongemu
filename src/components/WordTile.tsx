@@ -82,6 +82,7 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
   return (
     <motion.div
       ref={setNodeRef}
+      data-tile-id={tile.id}
       style={{ ...style, touchAction: 'manipulation' }}
       {...(draggable ? listeners : {})}
       {...(draggable ? attributes : {})}
