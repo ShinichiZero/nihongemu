@@ -124,6 +124,90 @@ export function SentenceBuilder({ exercise, onComplete }: SentenceBuilderProps) 
   const allFilled = exercise.slots.every((s) => slotFillings[s.id]);
   const sortedSlots = [...exercise.slots].sort((a, b) => a.order - b.order);
 
+  if (tapToSelect) {
+    return (
+      <div className="space-y-6">
+        <div className="text-center">
+          <p className="text-gray-400 text-sm mb-1">Translate to Japanese:</p>
+          <p className="text-white text-xl font-semibold">{exercise.prompt}</p>
+        </div>
+
+        <div className="flex flex-wrap gap-2 justify-center p-4 bg-gray-800/50 rounded-2xl min-h-[4rem] items-center">
+          {sortedSlots.map((slot) => (
+            <GrammarSlot
+              key={slot.id}
+              slot={slot}
+              occupiedTile={slotFillings[slot.id] ? tileMap.get(slotFillings[slot.id]) : undefined}
+              isCorrect={submitted && isCorrect}
+              isError={submitted && !isCorrect}
+            />
+          ))}
+        </div>
+
+        {warning && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="p-3 bg-yellow-900/50 border border-yellow-500/50 rounded-xl text-yellow-300 text-sm"
+          >
+            {warning}
+          </motion.div>
+        )}
+
+        <div className="flex flex-wrap gap-2 justify-center p-4 bg-gray-700/30 rounded-2xl min-h-[4rem] items-center">
+          {availableTiles.map((tile) => (
+            <WordTile
+              key={tile.id}
+              tile={tile}
+              onTap={tapToSelect ? () => handleTileTap(tile) : undefined}
+              draggable={!tapToSelect}
+            />
+          ))}
+          {availableTiles.length === 0 && (
+            <p className="text-gray-500 text-sm">All tiles placed!</p>
+          )}
+        </div>
+
+        <div className="flex gap-3 justify-center">
+          <button
+            onClick={handleReset}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-xl text-sm font-medium transition-colors"
+          >
+            🔄 Reset
+          </button>
+          <button
+            onClick={handleSubmit}
+            disabled={!allFilled || submitted}
+            className={`
+              px-6 py-2 rounded-xl text-sm font-semibold transition-all
+              ${allFilled && !submitted
+                ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/30'
+                : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+              }
+            `}
+          >
+            ✅ Check Answer
+          </button>
+        </div>
+
+        {submitted && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`text-center p-3 rounded-xl ${
+              isCorrect
+                ? 'bg-green-900/50 border border-green-500/50 text-green-300'
+                : 'bg-red-900/50 border border-red-500/50 text-red-300'
+            }`}
+          >
+            {isCorrect ? '🌸 Correct! Wonderful! 素晴らしい！' : '❌ Not quite. Try again!'}
+          </motion.div>
+        )}
+        <FeedbackOverlay type={feedback} onDone={() => setFeedback(null)} />
+      </div>
+    );
+  }
+
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
       <div className="space-y-6">
