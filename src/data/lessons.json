@@ -1,0 +1,891 @@
+[
+  {
+    "id": "lesson-1",
+    "grammarPoint": "〜よう (volitional)",
+    "category": "intentions",
+    "title": "Let's Do It! Volitional Form",
+    "explanation": "The volitional form 〜よう expresses the idea of 'let's' do something together, or a speaker's intention. For Group 2 verbs, replace る with よう. For Group 1 verbs, change the う-sound to おう. For する → しよう, くる → こよう.",
+    "exercises": [
+      {
+        "id": "ex-1-1",
+        "prompt": "Let's eat sushi!",
+        "tiles": [
+          { "id": "t-1-1-1", "text": "寿司", "type": "noun" },
+          { "id": "t-1-1-2", "text": "を", "type": "particle" },
+          { "id": "t-1-1-3", "text": "食べよう", "type": "verb" },
+          { "id": "t-1-1-4", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-1-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-1-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-1-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-1-1-1", "t-1-1-2", "t-1-1-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-1-2",
+        "prompt": "Let's go to the park.",
+        "tiles": [
+          { "id": "t-1-2-1", "text": "公園", "type": "noun" },
+          { "id": "t-1-2-2", "text": "に", "type": "particle" },
+          { "id": "t-1-2-3", "text": "行こう", "type": "verb" },
+          { "id": "t-1-2-4", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-1-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-1-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-1-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-1-2-1", "t-1-2-2", "t-1-2-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-1-3",
+        "prompt": "Let's study Japanese!",
+        "tiles": [
+          { "id": "t-1-3-1", "text": "日本語", "type": "noun" },
+          { "id": "t-1-3-2", "text": "を", "type": "particle" },
+          { "id": "t-1-3-3", "text": "勉強しよう", "type": "verb" },
+          { "id": "t-1-3-4", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-1-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-1-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-1-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-1-3-1", "t-1-3-2", "t-1-3-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-2",
+    "grammarPoint": "〜ようと思う",
+    "category": "intentions",
+    "title": "I'm Thinking of Doing...",
+    "explanation": "〜ようと思う expresses the speaker's intention or plan to do something. It conveys a more tentative decision than 〜つもり. Use volitional form + と思う.",
+    "exercises": [
+      {
+        "id": "ex-2-1",
+        "prompt": "I'm thinking of traveling to Japan.",
+        "tiles": [
+          { "id": "t-2-1-1", "text": "日本", "type": "noun" },
+          { "id": "t-2-1-2", "text": "に", "type": "particle" },
+          { "id": "t-2-1-3", "text": "旅行しよう", "type": "verb" },
+          { "id": "t-2-1-4", "text": "と思う", "type": "grammar" },
+          { "id": "t-2-1-5", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-2-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-2-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-2-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-2-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-2-1-1", "t-2-1-2", "t-2-1-3", "t-2-1-4"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-2-2",
+        "prompt": "I'm thinking of reading that book.",
+        "tiles": [
+          { "id": "t-2-2-1", "text": "あの本", "type": "noun" },
+          { "id": "t-2-2-2", "text": "を", "type": "particle" },
+          { "id": "t-2-2-3", "text": "読もう", "type": "verb" },
+          { "id": "t-2-2-4", "text": "と思う", "type": "grammar" },
+          { "id": "t-2-2-5", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-2-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-2-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-2-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-2-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-2-2-1", "t-2-2-2", "t-2-2-3", "t-2-2-4"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-2-3",
+        "prompt": "I'm thinking of learning to cook.",
+        "tiles": [
+          { "id": "t-2-3-1", "text": "料理", "type": "noun" },
+          { "id": "t-2-3-2", "text": "を", "type": "particle" },
+          { "id": "t-2-3-3", "text": "習おう", "type": "verb" },
+          { "id": "t-2-3-4", "text": "と思う", "type": "grammar" },
+          { "id": "t-2-3-5", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-2-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-2-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-2-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-2-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-2-3-1", "t-2-3-2", "t-2-3-3", "t-2-3-4"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-3",
+    "grammarPoint": "〜つもり / 〜ないつもり",
+    "category": "intentions",
+    "title": "Plans and Intentions with つもり",
+    "explanation": "〜つもり expresses a firm intention or plan. Use dictionary form + つもり for positive, and ない form + つもり for negative plans.",
+    "exercises": [
+      {
+        "id": "ex-3-1",
+        "prompt": "I plan to move to Tokyo next year.",
+        "tiles": [
+          { "id": "t-3-1-1", "text": "来年", "type": "noun" },
+          { "id": "t-3-1-2", "text": "東京", "type": "noun" },
+          { "id": "t-3-1-3", "text": "に", "type": "particle" },
+          { "id": "t-3-1-4", "text": "引っ越す", "type": "verb" },
+          { "id": "t-3-1-5", "text": "つもり", "type": "grammar" },
+          { "id": "t-3-1-6", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-3-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-3-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-3-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-3-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-3-1-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-3-1-1", "t-3-1-2", "t-3-1-3", "t-3-1-4", "t-3-1-5"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-3-2",
+        "prompt": "I don't plan to eat meat anymore.",
+        "tiles": [
+          { "id": "t-3-2-1", "text": "もう", "type": "grammar" },
+          { "id": "t-3-2-2", "text": "肉", "type": "noun" },
+          { "id": "t-3-2-3", "text": "を", "type": "particle" },
+          { "id": "t-3-2-4", "text": "食べない", "type": "verb" },
+          { "id": "t-3-2-5", "text": "つもり", "type": "grammar" },
+          { "id": "t-3-2-6", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-3-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-3-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-3-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-3-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-3-2-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-3-2-1", "t-3-2-2", "t-3-2-3", "t-3-2-4", "t-3-2-5"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-3-3",
+        "prompt": "I intend to study every day.",
+        "tiles": [
+          { "id": "t-3-3-1", "text": "毎日", "type": "noun" },
+          { "id": "t-3-3-2", "text": "勉強する", "type": "verb" },
+          { "id": "t-3-3-3", "text": "つもり", "type": "grammar" },
+          { "id": "t-3-3-4", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-3-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-3-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-3-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-3-3-1", "t-3-3-2", "t-3-3-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-4",
+    "grammarPoint": "〜ば (conditional)",
+    "category": "conditionals",
+    "title": "If... Then: The ば Conditional",
+    "explanation": "〜ば expresses a conditional meaning 'if X, then Y'. It is natural when both clauses share the same logical subject or when expressing general truths. Avoid using 〜ば with subjective desires/commands for different subjects.",
+    "exercises": [
+      {
+        "id": "ex-4-1",
+        "prompt": "If you study, you will understand.",
+        "tiles": [
+          { "id": "t-4-1-1", "text": "勉強すれば", "type": "verb" },
+          { "id": "t-4-1-2", "text": "分かる", "type": "verb" },
+          { "id": "t-4-1-3", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-4-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-4-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 }
+        ],
+        "solution": ["t-4-1-1", "t-4-1-2"],
+        "sameSubject": true,
+        "conditionalType": "ba"
+      },
+      {
+        "id": "ex-4-2",
+        "prompt": "If it is cheap, I will buy it.",
+        "tiles": [
+          { "id": "t-4-2-1", "text": "安ければ", "type": "adjective" },
+          { "id": "t-4-2-2", "text": "買う", "type": "verb" },
+          { "id": "t-4-2-3", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-4-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-4-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 }
+        ],
+        "solution": ["t-4-2-1", "t-4-2-2"],
+        "sameSubject": false,
+        "conditionalType": "ba"
+      },
+      {
+        "id": "ex-4-3",
+        "prompt": "If you turn left, there is a convenience store.",
+        "tiles": [
+          { "id": "t-4-3-1", "text": "左に曲がれば", "type": "verb" },
+          { "id": "t-4-3-2", "text": "コンビニ", "type": "noun" },
+          { "id": "t-4-3-3", "text": "が", "type": "particle" },
+          { "id": "t-4-3-4", "text": "ある", "type": "verb" },
+          { "id": "t-4-3-5", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-4-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-4-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-4-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-4-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-4-3-1", "t-4-3-2", "t-4-3-3", "t-4-3-4"],
+        "sameSubject": false,
+        "conditionalType": "ba"
+      }
+    ]
+  },
+  {
+    "id": "lesson-5",
+    "grammarPoint": "〜たら (conditional)",
+    "category": "conditionals",
+    "title": "When/If That Happens: The たら Conditional",
+    "explanation": "〜たら expresses 'when' or 'if' and is very versatile. It can be used with different subjects and for one-time events. Form: past tense form + ら.",
+    "exercises": [
+      {
+        "id": "ex-5-1",
+        "prompt": "When you arrive at the station, please call me.",
+        "tiles": [
+          { "id": "t-5-1-1", "text": "駅に着いたら", "type": "verb" },
+          { "id": "t-5-1-2", "text": "電話して", "type": "verb" },
+          { "id": "t-5-1-3", "text": "ください", "type": "grammar" },
+          { "id": "t-5-1-4", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-5-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-5-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-5-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-5-1-1", "t-5-1-2", "t-5-1-3"],
+        "sameSubject": false,
+        "conditionalType": "tara"
+      },
+      {
+        "id": "ex-5-2",
+        "prompt": "If it rains, I will stay home.",
+        "tiles": [
+          { "id": "t-5-2-1", "text": "雨が降ったら", "type": "verb" },
+          { "id": "t-5-2-2", "text": "家にいる", "type": "verb" },
+          { "id": "t-5-2-3", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-5-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-5-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 }
+        ],
+        "solution": ["t-5-2-1", "t-5-2-2"],
+        "sameSubject": true,
+        "conditionalType": "tara"
+      },
+      {
+        "id": "ex-5-3",
+        "prompt": "When I was young, I lived in Osaka.",
+        "tiles": [
+          { "id": "t-5-3-1", "text": "子供だったら", "type": "grammar" },
+          { "id": "t-5-3-2", "text": "大阪に", "type": "noun" },
+          { "id": "t-5-3-3", "text": "住んでいた", "type": "verb" },
+          { "id": "t-5-3-4", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-5-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-5-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-5-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-5-3-1", "t-5-3-2", "t-5-3-3"],
+        "sameSubject": true,
+        "conditionalType": "tara"
+      }
+    ]
+  },
+  {
+    "id": "lesson-6",
+    "grammarPoint": "〜と (conditional)",
+    "category": "conditionals",
+    "title": "Natural Consequences: The と Conditional",
+    "explanation": "〜と is used for natural consequences, habitual actions, and directions. The result clause must be something that naturally/automatically follows. Cannot be used with requests, desires, or commands.",
+    "exercises": [
+      {
+        "id": "ex-6-1",
+        "prompt": "When you press this button, the door opens.",
+        "tiles": [
+          { "id": "t-6-1-1", "text": "このボタンを押すと", "type": "verb" },
+          { "id": "t-6-1-2", "text": "ドア", "type": "noun" },
+          { "id": "t-6-1-3", "text": "が", "type": "particle" },
+          { "id": "t-6-1-4", "text": "開く", "type": "verb" },
+          { "id": "t-6-1-5", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-6-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-6-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-6-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-6-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-6-1-1", "t-6-1-2", "t-6-1-3", "t-6-1-4"],
+        "sameSubject": false,
+        "conditionalType": "to"
+      },
+      {
+        "id": "ex-6-2",
+        "prompt": "When spring comes, flowers bloom.",
+        "tiles": [
+          { "id": "t-6-2-1", "text": "春になると", "type": "verb" },
+          { "id": "t-6-2-2", "text": "花", "type": "noun" },
+          { "id": "t-6-2-3", "text": "が", "type": "particle" },
+          { "id": "t-6-2-4", "text": "咲く", "type": "verb" },
+          { "id": "t-6-2-5", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-6-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-6-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-6-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-6-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-6-2-1", "t-6-2-2", "t-6-2-3", "t-6-2-4"],
+        "sameSubject": false,
+        "conditionalType": "to"
+      },
+      {
+        "id": "ex-6-3",
+        "prompt": "If you go straight, you will see the school.",
+        "tiles": [
+          { "id": "t-6-3-1", "text": "まっすぐ行くと", "type": "verb" },
+          { "id": "t-6-3-2", "text": "学校", "type": "noun" },
+          { "id": "t-6-3-3", "text": "が", "type": "particle" },
+          { "id": "t-6-3-4", "text": "見える", "type": "verb" },
+          { "id": "t-6-3-5", "text": "に", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-6-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-6-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-6-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-6-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-6-3-1", "t-6-3-2", "t-6-3-3", "t-6-3-4"],
+        "sameSubject": false,
+        "conditionalType": "to"
+      }
+    ]
+  },
+  {
+    "id": "lesson-7",
+    "grammarPoint": "〜がする",
+    "category": "sensory",
+    "title": "Sensory Perception with がする",
+    "explanation": "〜がする expresses perception of sounds, smells, tastes, and feelings. The subject is the sensory stimulus, and する here means 'to be perceived'. Common: 音がする (sounds), においがする (smells), 味がする (tastes), 気がする (feels).",
+    "exercises": [
+      {
+        "id": "ex-7-1",
+        "prompt": "Something smells good.",
+        "tiles": [
+          { "id": "t-7-1-1", "text": "いいにおい", "type": "noun" },
+          { "id": "t-7-1-2", "text": "が", "type": "particle" },
+          { "id": "t-7-1-3", "text": "する", "type": "verb" },
+          { "id": "t-7-1-4", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-7-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-7-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-7-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-7-1-1", "t-7-1-2", "t-7-1-3"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-7-2",
+        "prompt": "I hear a strange sound.",
+        "tiles": [
+          { "id": "t-7-2-1", "text": "変な音", "type": "noun" },
+          { "id": "t-7-2-2", "text": "が", "type": "particle" },
+          { "id": "t-7-2-3", "text": "する", "type": "verb" },
+          { "id": "t-7-2-4", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-7-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-7-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-7-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-7-2-1", "t-7-2-2", "t-7-2-3"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-7-3",
+        "prompt": "This tea tastes bitter.",
+        "tiles": [
+          { "id": "t-7-3-1", "text": "このお茶", "type": "noun" },
+          { "id": "t-7-3-2", "text": "は", "type": "particle" },
+          { "id": "t-7-3-3", "text": "苦い味", "type": "noun" },
+          { "id": "t-7-3-4", "text": "が", "type": "particle" },
+          { "id": "t-7-3-5", "text": "する", "type": "verb" },
+          { "id": "t-7-3-6", "text": "に", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-7-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-7-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-7-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-7-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-7-3-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-7-3-1", "t-7-3-2", "t-7-3-3", "t-7-3-4", "t-7-3-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-8",
+    "grammarPoint": "〜は...〜が (physical attributes)",
+    "category": "sensory",
+    "title": "Describing Physical Attributes",
+    "explanation": "The pattern X は Y が [adjective] is used to describe physical attributes or characteristics. X is the topic (whole), Y is the specific attribute being described.",
+    "exercises": [
+      {
+        "id": "ex-8-1",
+        "prompt": "Elephants have long noses.",
+        "tiles": [
+          { "id": "t-8-1-1", "text": "ゾウ", "type": "noun" },
+          { "id": "t-8-1-2", "text": "は", "type": "particle" },
+          { "id": "t-8-1-3", "text": "鼻", "type": "noun" },
+          { "id": "t-8-1-4", "text": "が", "type": "particle" },
+          { "id": "t-8-1-5", "text": "長い", "type": "adjective" },
+          { "id": "t-8-1-6", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-8-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-8-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-8-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-8-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-8-1-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-8-1-1", "t-8-1-2", "t-8-1-3", "t-8-1-4", "t-8-1-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-8-2",
+        "prompt": "That building has many floors.",
+        "tiles": [
+          { "id": "t-8-2-1", "text": "あのビル", "type": "noun" },
+          { "id": "t-8-2-2", "text": "は", "type": "particle" },
+          { "id": "t-8-2-3", "text": "階", "type": "noun" },
+          { "id": "t-8-2-4", "text": "が", "type": "particle" },
+          { "id": "t-8-2-5", "text": "多い", "type": "adjective" },
+          { "id": "t-8-2-6", "text": "に", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-8-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-8-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-8-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-8-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-8-2-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-8-2-1", "t-8-2-2", "t-8-2-3", "t-8-2-4", "t-8-2-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-8-3",
+        "prompt": "Tanaka-san has beautiful eyes.",
+        "tiles": [
+          { "id": "t-8-3-1", "text": "田中さん", "type": "noun" },
+          { "id": "t-8-3-2", "text": "は", "type": "particle" },
+          { "id": "t-8-3-3", "text": "目", "type": "noun" },
+          { "id": "t-8-3-4", "text": "が", "type": "particle" },
+          { "id": "t-8-3-5", "text": "きれい", "type": "adjective" },
+          { "id": "t-8-3-6", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-8-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-8-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-8-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-8-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-8-3-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-8-3-1", "t-8-3-2", "t-8-3-3", "t-8-3-4", "t-8-3-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-9",
+    "grammarPoint": "〜より/のほうが",
+    "category": "comparisons",
+    "title": "Comparisons with より and のほうが",
+    "explanation": "To compare two things in Japanese, use: [A] より [B] のほうが [adjective] - meaning 'B is more [adjective] than A'. のほうが emphasizes the chosen side of the comparison.",
+    "exercises": [
+      {
+        "id": "ex-9-1",
+        "prompt": "Tokyo is bigger than Osaka.",
+        "tiles": [
+          { "id": "t-9-1-1", "text": "大阪", "type": "noun" },
+          { "id": "t-9-1-2", "text": "より", "type": "grammar" },
+          { "id": "t-9-1-3", "text": "東京", "type": "noun" },
+          { "id": "t-9-1-4", "text": "のほうが", "type": "grammar" },
+          { "id": "t-9-1-5", "text": "大きい", "type": "adjective" },
+          { "id": "t-9-1-6", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-9-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-9-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-9-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-9-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-9-1-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-9-1-1", "t-9-1-2", "t-9-1-3", "t-9-1-4", "t-9-1-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-9-2",
+        "prompt": "Summer is hotter than spring.",
+        "tiles": [
+          { "id": "t-9-2-1", "text": "春", "type": "noun" },
+          { "id": "t-9-2-2", "text": "より", "type": "grammar" },
+          { "id": "t-9-2-3", "text": "夏", "type": "noun" },
+          { "id": "t-9-2-4", "text": "のほうが", "type": "grammar" },
+          { "id": "t-9-2-5", "text": "暑い", "type": "adjective" },
+          { "id": "t-9-2-6", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-9-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-9-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-9-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-9-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-9-2-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-9-2-1", "t-9-2-2", "t-9-2-3", "t-9-2-4", "t-9-2-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-9-3",
+        "prompt": "Dogs are more popular than cats.",
+        "tiles": [
+          { "id": "t-9-3-1", "text": "猫", "type": "noun" },
+          { "id": "t-9-3-2", "text": "より", "type": "grammar" },
+          { "id": "t-9-3-3", "text": "犬", "type": "noun" },
+          { "id": "t-9-3-4", "text": "のほうが", "type": "grammar" },
+          { "id": "t-9-3-5", "text": "人気がある", "type": "adjective" },
+          { "id": "t-9-3-6", "text": "に", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-9-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-9-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-9-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-9-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-9-3-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-9-3-1", "t-9-3-2", "t-9-3-3", "t-9-3-4", "t-9-3-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-10",
+    "grammarPoint": "〜ほど〜ない",
+    "category": "comparisons",
+    "title": "Not as... as with ほど〜ない",
+    "explanation": "〜ほど〜ない means 'not as [adjective] as'. Structure: [A] は [B] ほど [adjective negative]. A is not as [adjective] as B.",
+    "exercises": [
+      {
+        "id": "ex-10-1",
+        "prompt": "Tokyo is not as cold as Hokkaido.",
+        "tiles": [
+          { "id": "t-10-1-1", "text": "東京", "type": "noun" },
+          { "id": "t-10-1-2", "text": "は", "type": "particle" },
+          { "id": "t-10-1-3", "text": "北海道", "type": "noun" },
+          { "id": "t-10-1-4", "text": "ほど", "type": "grammar" },
+          { "id": "t-10-1-5", "text": "寒くない", "type": "adjective" },
+          { "id": "t-10-1-6", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-10-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-10-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-10-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-10-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-10-1-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-10-1-1", "t-10-1-2", "t-10-1-3", "t-10-1-4", "t-10-1-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-10-2",
+        "prompt": "This problem is not as difficult as that one.",
+        "tiles": [
+          { "id": "t-10-2-1", "text": "この問題", "type": "noun" },
+          { "id": "t-10-2-2", "text": "は", "type": "particle" },
+          { "id": "t-10-2-3", "text": "あの問題", "type": "noun" },
+          { "id": "t-10-2-4", "text": "ほど", "type": "grammar" },
+          { "id": "t-10-2-5", "text": "難しくない", "type": "adjective" },
+          { "id": "t-10-2-6", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-10-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-10-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-10-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-10-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-10-2-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-10-2-1", "t-10-2-2", "t-10-2-3", "t-10-2-4", "t-10-2-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-10-3",
+        "prompt": "This movie is not as interesting as the book.",
+        "tiles": [
+          { "id": "t-10-3-1", "text": "この映画", "type": "noun" },
+          { "id": "t-10-3-2", "text": "は", "type": "particle" },
+          { "id": "t-10-3-3", "text": "本", "type": "noun" },
+          { "id": "t-10-3-4", "text": "ほど", "type": "grammar" },
+          { "id": "t-10-3-5", "text": "面白くない", "type": "adjective" },
+          { "id": "t-10-3-6", "text": "に", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-10-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-10-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-10-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-10-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-10-3-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-10-3-1", "t-10-3-2", "t-10-3-3", "t-10-3-4", "t-10-3-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-11",
+    "grammarPoint": "〜の中で一番",
+    "category": "comparisons",
+    "title": "Superlatives: The Best/Most Among...",
+    "explanation": "〜の中で一番 means 'the most/best among [group]'. Structure: [Group] の中で [topic] が一番 [adjective].",
+    "exercises": [
+      {
+        "id": "ex-11-1",
+        "prompt": "Mount Fuji is the highest mountain in Japan.",
+        "tiles": [
+          { "id": "t-11-1-1", "text": "日本の山の中で", "type": "grammar" },
+          { "id": "t-11-1-2", "text": "富士山", "type": "noun" },
+          { "id": "t-11-1-3", "text": "が", "type": "particle" },
+          { "id": "t-11-1-4", "text": "一番", "type": "grammar" },
+          { "id": "t-11-1-5", "text": "高い", "type": "adjective" },
+          { "id": "t-11-1-6", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-11-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-11-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-11-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-11-1-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-11-1-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-11-1-1", "t-11-1-2", "t-11-1-3", "t-11-1-4", "t-11-1-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-11-2",
+        "prompt": "Among fruits, I like strawberries the most.",
+        "tiles": [
+          { "id": "t-11-2-1", "text": "果物の中で", "type": "grammar" },
+          { "id": "t-11-2-2", "text": "いちご", "type": "noun" },
+          { "id": "t-11-2-3", "text": "が", "type": "particle" },
+          { "id": "t-11-2-4", "text": "一番", "type": "grammar" },
+          { "id": "t-11-2-5", "text": "好き", "type": "adjective" },
+          { "id": "t-11-2-6", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-11-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-11-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-11-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-11-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-11-2-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-11-2-1", "t-11-2-2", "t-11-2-3", "t-11-2-4", "t-11-2-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-11-3",
+        "prompt": "In our class, Yuki is the fastest runner.",
+        "tiles": [
+          { "id": "t-11-3-1", "text": "クラスの中で", "type": "grammar" },
+          { "id": "t-11-3-2", "text": "ゆき", "type": "noun" },
+          { "id": "t-11-3-3", "text": "が", "type": "particle" },
+          { "id": "t-11-3-4", "text": "一番", "type": "grammar" },
+          { "id": "t-11-3-5", "text": "足が速い", "type": "adjective" },
+          { "id": "t-11-3-6", "text": "に", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-11-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-11-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-11-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-11-3-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 },
+          { "id": "s-11-3-5", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 4 }
+        ],
+        "solution": ["t-11-3-1", "t-11-3-2", "t-11-3-3", "t-11-3-4", "t-11-3-5"],
+        "sameSubject": false,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-12",
+    "grammarPoint": "〜たことがある",
+    "category": "experience",
+    "title": "Past Experiences with たことがある",
+    "explanation": "〜たことがある expresses that you have had a certain experience (at least once). Use the past (た) form of a verb + ことがある. The negative is 〜たことがない.",
+    "exercises": [
+      {
+        "id": "ex-12-1",
+        "prompt": "I have been to Kyoto before.",
+        "tiles": [
+          { "id": "t-12-1-1", "text": "京都に", "type": "noun" },
+          { "id": "t-12-1-2", "text": "行った", "type": "verb" },
+          { "id": "t-12-1-3", "text": "ことがある", "type": "grammar" },
+          { "id": "t-12-1-4", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-12-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-12-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-12-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-12-1-1", "t-12-1-2", "t-12-1-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-12-2",
+        "prompt": "Have you ever eaten natto?",
+        "tiles": [
+          { "id": "t-12-2-1", "text": "納豆を", "type": "noun" },
+          { "id": "t-12-2-2", "text": "食べた", "type": "verb" },
+          { "id": "t-12-2-3", "text": "ことがある", "type": "grammar" },
+          { "id": "t-12-2-4", "text": "か", "type": "grammar" },
+          { "id": "t-12-2-5", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-12-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-12-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-12-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 },
+          { "id": "s-12-2-4", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 3 }
+        ],
+        "solution": ["t-12-2-1", "t-12-2-2", "t-12-2-3", "t-12-2-4"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-12-3",
+        "prompt": "I have never seen snow.",
+        "tiles": [
+          { "id": "t-12-3-1", "text": "雪を", "type": "noun" },
+          { "id": "t-12-3-2", "text": "見た", "type": "verb" },
+          { "id": "t-12-3-3", "text": "ことがない", "type": "grammar" },
+          { "id": "t-12-3-4", "text": "が", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-12-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-12-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-12-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-12-3-1", "t-12-3-2", "t-12-3-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      }
+    ]
+  },
+  {
+    "id": "lesson-13",
+    "grammarPoint": "〜（ない）ことがある",
+    "category": "experience",
+    "title": "Occasional Events with ことがある",
+    "explanation": "When used with the dictionary or negative form (not past), 〜ことがある means 'there are times when' or 'sometimes'. This describes habitual or occasional occurrences.",
+    "exercises": [
+      {
+        "id": "ex-13-1",
+        "prompt": "Sometimes I forget my homework.",
+        "tiles": [
+          { "id": "t-13-1-1", "text": "宿題を", "type": "noun" },
+          { "id": "t-13-1-2", "text": "忘れる", "type": "verb" },
+          { "id": "t-13-1-3", "text": "ことがある", "type": "grammar" },
+          { "id": "t-13-1-4", "text": "は", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-13-1-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-13-1-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-13-1-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-13-1-1", "t-13-1-2", "t-13-1-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-13-2",
+        "prompt": "There are times when I don't eat breakfast.",
+        "tiles": [
+          { "id": "t-13-2-1", "text": "朝ごはんを", "type": "noun" },
+          { "id": "t-13-2-2", "text": "食べない", "type": "verb" },
+          { "id": "t-13-2-3", "text": "ことがある", "type": "grammar" },
+          { "id": "t-13-2-4", "text": "で", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-13-2-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-13-2-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-13-2-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-13-2-1", "t-13-2-2", "t-13-2-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      },
+      {
+        "id": "ex-13-3",
+        "prompt": "Sometimes I go for a walk in the morning.",
+        "tiles": [
+          { "id": "t-13-3-1", "text": "朝に", "type": "noun" },
+          { "id": "t-13-3-2", "text": "散歩する", "type": "verb" },
+          { "id": "t-13-3-3", "text": "ことがある", "type": "grammar" },
+          { "id": "t-13-3-4", "text": "を", "type": "particle" }
+        ],
+        "slots": [
+          { "id": "s-13-3-1", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 0 },
+          { "id": "s-13-3-2", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 1 },
+          { "id": "s-13-3-3", "accepts": ["noun","verb","particle","adjective","grammar"], "order": 2 }
+        ],
+        "solution": ["t-13-3-1", "t-13-3-2", "t-13-3-3"],
+        "sameSubject": true,
+        "conditionalType": "none"
+      }
+    ]
+  }
+]
