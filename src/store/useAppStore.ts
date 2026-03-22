@@ -27,6 +27,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     set({ currentModule: module, currentExerciseIndex: 0 });
   },
 
+  setExerciseIndex: (i: number) => {
+    set({ currentExerciseIndex: i });
+  },
+
   nextExercise: () => {
     set((state) => ({ currentExerciseIndex: state.currentExerciseIndex + 1 }));
   },

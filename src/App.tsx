@@ -55,6 +55,15 @@ export default function App() {
     markComplete(exerciseId);
   };
 
+  // Randomize the shown exercise on each page load (mobile-friendly random phrases)
+  const setExerciseIndex = useAppStore((s) => (s as any).setExerciseIndex as (n:number)=>void);
+  useEffect(() => {
+    if (allExercises.length > 0) {
+      const idx = Math.floor(Math.random() * allExercises.length);
+      setExerciseIndex(idx);
+    }
+  }, [allExercises.length, setExerciseIndex]);
+
   const handleNext = () => {
     if (currentExerciseIndex < totalExercises - 1) {
       nextExercise();
