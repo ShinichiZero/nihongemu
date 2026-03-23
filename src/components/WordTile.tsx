@@ -20,10 +20,11 @@ const tileColors: Record<string, string> = {
 };
 
 export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggable = true }: WordTileProps) {
-  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+  const draggableHook = useDraggable({
     id: tile.id,
     data: { tile },
   });
+  const { attributes, listeners, setNodeRef, transform, isDragging } = draggableHook;
 
   const style = useMemo(() => ({
     transform: CSS.Translate.toString(transform),
@@ -91,7 +92,7 @@ export function WordTile({ tile, isDragging: externalIsDragging, onTap, draggabl
       onPointerUpCapture={onPointerUpCapture}
       onClick={onClickFallback}
       role={onTap ? 'button' : undefined}
-      tabIndex={0}
+      tabIndex={onTap ? 0 : undefined}
       aria-label={tile.text}
       animate={{ scale: isBeingDragged ? 1.1 : 1 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
